@@ -1,5 +1,7 @@
-# auth-js Keycloak
+# Auth.js Keycloak Test
 
-Auth-JS Keycloak is a Keycloak installation to support testing https://github.com/nextauthjs/next-auth.
+Auth.js Keycloak is a Keycloak installation to support testing https://github.com/nextauthjs/next-auth.
 
-## deployment
+## Deployment
+
+TODO
