@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
-/opt/keycloak/bin/kc.sh start --optimized --hostname localhost &
+/opt/keycloak/bin/kc.sh start --optimized --hostname localhost # &
 pid=$!
 sleep 10 # TODO: healthcheck?
 
-/opt/keycloak/bin/kcadm.sh config credentials --server http://localhost:8080 --realm master --user admin --password $KEYCLOAK_ADMIN_PASSWORD
+/opt/keycloak/bin/kcadm.sh config credentials --server http://localhost:8443 --realm master --user admin --password $KEYCLOAK_ADMIN_PASSWORD
 /opt/keycloak/bin/kcadm.sh create clients -r master -f - << EOF
  {
   "id" : "d440425d-6475-47d7-854b-59ff6cb1893f",
@@ -45,7 +45,7 @@ sleep 10 # TODO: healthcheck?
     "configure" : true,
     "manage" : true
   }
-} 
+}
 EOF
 /opt/keycloak/bin/kcadm.sh create users -r master -s username=bob -s enabled=true
 /opt/keycloak/bin/kcadm.sh set-password --username bob --new-password bob

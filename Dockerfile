@@ -12,6 +12,9 @@ FROM quay.io/keycloak/keycloak:latest
 COPY --from=builder /opt/keycloak/ /opt/keycloak/
 ADD start.sh /start.sh
 
+ENV PORT=${PORT:-8080}
+EXPOSE $PORT
+
 ENV KEYCLOAK_ADMIN=admin
-ENV A=B
-ENTRYPOINT ["/opt/keycloak/bin/kc.sh", "start", "--hostname", "localhost", "--optimized"]
+
+ENTRYPOINT ["/start.sh"]
