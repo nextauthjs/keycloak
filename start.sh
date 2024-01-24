@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
-/opt/keycloak/bin/kc.sh build --health-enabled=true
-/opt/keycloak/bin/kc.sh start-dev &
+/opt/keycloak/bin/kc.sh start --optimized --hostname localhost &
 pid=$!
-sleep 10 # health
+sleep 10 # TODO: healthcheck?
 
 /opt/keycloak/bin/kcadm.sh config credentials --server http://localhost:8080 --realm master --user admin --password $KEYCLOAK_ADMIN_PASSWORD
 /opt/keycloak/bin/kcadm.sh create clients -r master -f - << EOF
