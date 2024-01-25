@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-/opt/keycloak/bin/kc.sh start --optimized --hostname localhost # &
+/opt/keycloak/bin/kc.sh start --optimized --hostname $HOSTNAME # &
 pid=$!
 sleep 10 # TODO: healthcheck?
 
