@@ -1,0 +1,35 @@
+## API Settings - https://docs.traefik.io/operations/api/, endpoints - https://docs.traefik.io/operations/api/#endpoints ##
+[api]
+insecure = false
+dashboard = true
+# debug = true
+
+## Log Settings (options: ERROR, DEBUG, PANIC, FATAL, WARN, INFO) - https://docs.traefik.io/observability/logs/ ##
+# [log]
+# level = "DEBUG"
+
+## Provider Settings - https://docs.traefik.io/providers/docker/#provider-configuration ##
+[providers]
+  [providers.docker]
+  endpoint = "unix:///var/run/docker.sock"
+  exposedbydefault = false
+  network = "web"
+  [providers.file]
+  filename = "/config.toml"
+
+## Entrypoints Settings - https://docs.traefik.io/routing/entrypoints/#configuration ##
+[entrypoints]
+  [entrypoints.http]
+  address = ":80"
+  [entrypoints.https]
+  address = ":443"
+  # [entryPoints.ssh]
+  # address = ":2222"
+
+## Certificate Settings (Let's Encrypt) -  https://docs.traefik.io/https/acme/#configuration-examples ##
+[certificatesresolvers]
+  [certificatesresolvers.tls.acme]
+  email = "info@authjs.dev"
+  storage = "/acme.json"
+    [certificatesresolvers.tls.acme.httpchallenge]
+    entryPoint = "http"
