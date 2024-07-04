@@ -4,11 +4,6 @@ ARGS="$@"
 
 KEYCLOAK_PID=$!
 
-until /opt/keycloak/bin/kcadm.sh config credentials --server http://localhost:8080 --realm master --user $KEYCLOAK_ADMIN --password $KEYCLOAK_ADMIN_PASSWORD; do
-    >&2 echo "Keycloak is unavailable - sleeping"
-    sleep 1
-done
-
 term_handler() {
     echo "Termination signal received, stopping Keycloak..."
     if [ $KEYCLOAK_PID -ne 0 ]; then
@@ -19,6 +14,11 @@ term_handler() {
 }
 
 trap 'term_handler' SIGTERM SIGINT
+
+until /opt/keycloak/bin/kcadm.sh config credentials --server http://localhost:8080 --realm master --user $KEYCLOAK_ADMIN --password $KEYCLOAK_ADMIN_PASSWORD; do
+    >&2 echo "Keycloak is unavailable - sleeping"
+    sleep 1
+done
 
 /opt/keycloak/bin/kcadm.sh config credentials --server http://localhost:8080 --realm master --user admin --password $KEYCLOAK_ADMIN_PASSWORD
 /opt/keycloak/bin/kcadm.sh create clients --server http://localhost:8080  -r master -f - <<-EOF
