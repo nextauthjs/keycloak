@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-/opt/keycloak/bin/kc.sh start --optimized --hostname $HOSTNAME &
+ARGS="$@"
+/opt/keycloak/bin/kc.sh start --optimized $ARGS &
 
 KEYCLOAK_PID=$!
 
