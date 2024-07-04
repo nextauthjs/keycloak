@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 ARGS="$@"
-/opt/keycloak/bin/kc.sh start --optimized $ARGS &
+/opt/keycloak/bin/kc.sh $ARGS &
 
 KEYCLOAK_PID=$!
 
