@@ -1,0 +1,27 @@
+{
+  "realm" : "authjs",
+  "users" : [ {
+    "id" : "40db4408-71b6-4939-b778-b58977401323",
+    "username" : "bob",
+    "firstName" : "Bob",
+    "lastName" : "Alice",
+    "email" : "bob@authjs.com",
+    "emailVerified" : false,
+    "createdTimestamp" : 1721671321001,
+    "enabled" : true,
+    "totp" : false,
+    "credentials" : [ {
+      "id" : "518f806f-2450-4a9e-9392-7df3cfef453d",
+      "type" : "password",
+      "userLabel" : "My password",
+      "createdDate" : 1721671333846,
+      "secretData" : "{\"value\":\"9XqzEzJO/4RKO6mdYWECicsCrr1t2E8/XzUZ8KNSKgk=\",\"salt\":\"AyxsWIhFSSQfvx04YSZ2JQ==\",\"additionalParameters\":{}}",
+      "credentialData" : "{\"hashIterations\":5,\"algorithm\":\"argon2\",\"additionalParameters\":{\"hashLength\":[\"32\"],\"memory\":[\"7168\"],\"type\":[\"id\"],\"version\":[\"1.3\"],\"parallelism\":[\"1\"]}}"
+    } ],
+    "disableableCredentialTypes" : [ ],
+    "requiredActions" : [ ],
+    "realmRoles" : [ "default-roles-authjs" ],
+    "notBefore" : 0,
+    "groups" : [ ]
+  } ]
+}
