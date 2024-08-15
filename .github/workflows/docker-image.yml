@@ -27,7 +27,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@9ec57ed1fcdbf14dcef7dfbe97b2010124a938b7
         with:
-          images: falcowinkler/authjs-test-keycloak
+          images: authjs/test-keycloak:latest
 
       - name: Build and push Docker image
         id: push
