@@ -1,7 +1,7 @@
 <p align="center">
    <br/>
    <a href="https://authjs.dev" target="_blank"><img width="150px" src="https://authjs.dev/img/logo-sm.png" /></a>
-   <h3 align="center">Auth.js 3rd Party Backend</a></h3>
+   <h3 align="center">Auth.js Test Keycloak</a></h3>
    <h4 align="center">Authentication for the Web.</h4>
    <p align="center" style="align: center;">
       <a href="https://npm.im/next-auth">
@@ -19,7 +19,7 @@
    </p>
 </p>
 
-Auth.js Keycloak is a Keycloak installation to support testing https://github.com/nextauthjs/next-auth.
+Auth.js test Keycloak is a Keycloak installation to support testing https://github.com/nextauthjs/next-auth.
 It is deployed under https://keycloak.authjs.dev.
 
 This docker image is self-contained and can be used just like `quay.io/keycloak/keycloak`.
